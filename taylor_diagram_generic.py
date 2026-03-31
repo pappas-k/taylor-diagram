@@ -153,7 +153,7 @@ def plot_taylor(stats, model_defs, output_file=None):
             np.arccos(r2), nsd,
             marker='o', color=m['color'],
             markeredgecolor='black', markeredgewidth=0.5,
-            ms=8, zorder=1, ls='',
+            ms=8, zorder=5, ls='',
         )
 
     # Legend
