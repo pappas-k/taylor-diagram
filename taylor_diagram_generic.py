@@ -139,7 +139,7 @@ def add_nrmse_contours(aux_ax, smax=1.5, levels=None):
         (0.75, 1.05),   # NRMSE = 0.75
         (1.10, 0.91),   # NRMSE = 1.00
     ]
-    plt.clabel(cs, fmt='%.2f', fontsize=14, inline=True, manual=label_positions)
+    plt.clabel(cs, fmt='%.2f', fontsize=16, inline=True, manual=label_positions)
 
 
 def plot_taylor(stats, model_defs, output_file=None):
