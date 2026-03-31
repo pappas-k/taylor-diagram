@@ -1,6 +1,6 @@
 # Taylor Diagram
 
-A generic, self-contained Python implementation of the Taylor diagram, a compact polar plot that summarises how well one or more model outputs reproduce a reference (observed) signal using three statistics simultaneously: the normalised standard deviation (NSD), the correlation coefficient (R), and the normalised centred root-mean-square error (NRMSE).
+A generic, self-contained Python implementation of the Taylor diagram, a compact polar plot that summarises how well one or more model outputs reproduce a reference (observed) signal using three statistics simultaneously: the normalised standard deviation ($\sigma_N$), the coefficient of determination ($R^2$), and the normalised centred root-mean-square error (NRMSE).
 
 The Taylor diagram was introduced by Taylor (2001) as a way to condense model evaluation into a single, readable figure. Each model appears as a point on a polar plot: its angular position encodes the correlation with the reference, its radial distance encodes the ratio of model-to-observed variability, and its distance from the reference point encodes the centred RMSE. A model that perfectly reproduces the observations plots exactly on the reference point.
 
