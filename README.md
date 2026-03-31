@@ -8,6 +8,28 @@ This repository provides a ready-to-run script that generates such a diagram fro
 
 ---
 
+## Practical application
+
+This implementation was used in the following peer-reviewed study:
+
+> Pappas, K., Nguyen, Q. C., Zilakos, I., Beevers, L., & Angeloudis, A. (2025). On the economic feasibility of tidal range power plants. *Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences*, 481(2305), 20230867. https://doi.org/10.1098/rspa.2023.0867
+
+In that paper, Taylor diagrams were used to evaluate and compare hydrodynamic model outputs against observational reference data as part of an integrated framework for assessing tidal range power plants. The framework combined operation strategy optimisation, hydrodynamic impact modelling, and techno-economic analysis (CAPEX and LCOE). The study redesigned 18 tidal range installations across UK sites and demonstrated that equivalent or lower levelised costs of energy can be achieved at substantially reduced capital expenditure, strengthening the economic case for tidal range energy.
+
+---
+
+## Citation
+
+If you use this code, please cite:
+
+1. **The paper above** (practical application and context):
+   > Pappas, K., Nguyen, Q. C., Zilakos, I., Beevers, L., & Angeloudis, A. (2025). On the economic feasibility of tidal range power plants. *Proceedings of the Royal Society A*, 481(2305), 20230867. https://doi.org/10.1098/rspa.2023.0867
+
+2. **The original Taylor diagram paper**:
+   > Taylor, K. E. (2001). Summarizing model performance in a single diagram. *Journal of Geophysical Research: Atmospheres*, 106(D7), 7183–7192. https://doi.org/10.1029/2000JD900719
+
+---
+
 ## Features
 
 - **Normalised Standard Deviation (NSD)** on the radial axis — σ\_model / σ\_obs
@@ -62,28 +84,6 @@ A model that agrees well with observations plots close to the reference point: N
 - Python 3.8+
 - numpy
 - matplotlib
-
----
-
-## Practical application
-
-This implementation was used in the following peer-reviewed study:
-
-> Pappas, K., Nguyen, Q. C., Zilakos, I., Beevers, L., & Angeloudis, A. (2025). On the economic feasibility of tidal range power plants. *Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences*, 481(2305), 20230867. https://doi.org/10.1098/rspa.2023.0867
-
-In that paper, Taylor diagrams were used to evaluate and compare hydrodynamic model outputs against observational reference data as part of an integrated framework for assessing tidal range power plants. The framework combined operation strategy optimisation, hydrodynamic impact modelling, and techno-economic analysis (CAPEX and LCOE). The study redesigned 18 tidal range installations across UK sites and demonstrated that equivalent or lower levelised costs of energy can be achieved at substantially reduced capital expenditure, strengthening the economic case for tidal range energy.
-
----
-
-## Citation
-
-If you use this code, please cite:
-
-1. **The paper above** (practical application and context):
-   > Pappas, K., Nguyen, Q. C., Zilakos, I., Beevers, L., & Angeloudis, A. (2025). On the economic feasibility of tidal range power plants. *Proceedings of the Royal Society A*, 481(2305), 20230867. https://doi.org/10.1098/rspa.2023.0867
-
-2. **The original Taylor diagram paper**:
-   > Taylor, K. E. (2001). Summarizing model performance in a single diagram. *Journal of Geophysical Research: Atmospheres*, 106(D7), 7183–7192. https://doi.org/10.1029/2000JD900719
 
 ---
 
