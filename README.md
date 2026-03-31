@@ -36,7 +36,7 @@ If you use this code, please cite:
 
 ## Features
 
-- **Normalised Standard Deviation ($\sigma_N$)** on the radial axis: $\sigma_N = \sigma_{model} / \sigma_{obs}$
+- **Normalised Standard Deviation ($\sigma_N$)** on the radial axis
 - **Coefficient of determination ($R^2$)** on the angular axis
 - **Normalised centred RMSE (NRMSE)** as dashed contours centred on the reference point
 - **Summary statistics table** printed to the terminal before plotting: $\sigma_N$, R, $R^2$, NRMSE for every model
