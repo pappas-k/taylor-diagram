@@ -176,7 +176,7 @@ def plot_taylor(stats, model_defs, output_file=None):
     fig.legend(handles=handles, loc='upper left',
                bbox_to_anchor=(0.78, 0.95), frameon=False, fontsize=14)
 
-    fig.text(0.40, 0.62, 'NRMSE', rotation=18, color='navy', fontsize=14)
+    fig.text(0.40, 0.62, 'NRMSE', rotation=18, color='navy', fontsize=16)
 
     if output_file:
         plt.savefig(output_file, dpi=600, bbox_inches='tight')
