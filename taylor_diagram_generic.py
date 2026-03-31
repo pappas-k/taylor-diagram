@@ -20,7 +20,7 @@ import mpl_toolkits.axisartist.floating_axes as fa
 from matplotlib import rc
 from matplotlib.lines import Line2D
 
-rc('font', **{'family': 'serif', 'size': 18})
+rc('font', **{'family': 'serif', 'size': 15})
 rc('text', usetex=True)          # comment out if LaTeX is not installed
 
 
@@ -172,7 +172,7 @@ def plot_taylor(stats, model_defs, output_file=None):
     fig.text(0.40, 0.62, 'NRMSE', rotation=18, color='navy', fontsize=22)
 
     if output_file:
-        plt.savefig(output_file, dpi=300, bbox_inches='tight')
+        plt.savefig(output_file, dpi=600, bbox_inches='tight')
         print(f'Saved: {output_file}')
     plt.show()
     plt.close(fig)
