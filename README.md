@@ -36,10 +36,10 @@ If you use this code, please cite:
 
 ## Features
 
-- **Normalised Standard Deviation (NSD)** on the radial axis: σ\_model / σ\_obs
-- **R² (coefficient of determination)** on the angular axis
+- **Normalised Standard Deviation ($\sigma_N$)** on the radial axis: $\sigma_N = \sigma_{model} / \sigma_{obs}$
+- **Coefficient of determination ($R^2$)** on the angular axis
 - **Normalised centred RMSE (NRMSE)** as dashed contours centred on the reference point
-- **Summary statistics table** printed to the terminal before plotting: NSD, R, R², NRMSE for every model
+- **Summary statistics table** printed to the terminal before plotting: $\sigma_N$, R, $R^2$, NRMSE for every model
 - **Synthetic test signals**: sinusoids with configurable amplitude, frequency, phase, and noise level
 - Up to **8 labelled model signals** out of the box, trivially extensible
 - Optional **figure export** to PNG (or any matplotlib-supported format)
