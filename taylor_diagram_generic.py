@@ -132,7 +132,7 @@ def add_nrmse_contours(aux_ax, smax=1.5, levels=None):
     NRMSE = np.sqrt(1.0 + rs**2 - 2.0 * rs * np.cos(ts))
     cs = aux_ax.contour(ts, rs, NRMSE, levels=levels,
                         colors='navy', linestyles='--', linewidths=0.8)
-    plt.clabel(cs, fmt='%.2f', fontsize=22, inline=True)
+    plt.clabel(cs, fmt='%.2f', fontsize=14, inline=True)
 
 
 def plot_taylor(stats, model_defs, output_file=None):
@@ -169,7 +169,7 @@ def plot_taylor(stats, model_defs, output_file=None):
     fig.legend(handles=handles, loc='upper left',
                bbox_to_anchor=(0.78, 0.95), frameon=False, fontsize=14)
 
-    fig.text(0.40, 0.62, 'NRMSE', rotation=18, color='navy', fontsize=22)
+    fig.text(0.40, 0.62, 'NRMSE', rotation=18, color='navy', fontsize=14)
 
     if output_file:
         plt.savefig(output_file, dpi=600, bbox_inches='tight')
