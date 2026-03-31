@@ -6,6 +6,8 @@ The Taylor diagram was introduced by Taylor (2001) as a way to condense model ev
 
 This repository provides a ready-to-run script that generates such a diagram from synthetic sinusoidal signals and prints a companion statistics table to the terminal. It is designed to be easy to adapt to real observed and modelled time series from any domain — oceanography, hydrology, atmospheric science, or any other field where model performance assessment is needed.
 
+![Taylor Diagram](taylor_diagram.png)
+
 ---
 
 ## Practical application
