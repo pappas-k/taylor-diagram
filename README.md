@@ -92,9 +92,10 @@ A model that agrees well with observations plots close to the reference point: N
 ---
 
 ## References
-
-- Taylor, K. E. (2001). Summarizing model performance in a single diagram. *Journal of Geophysical Research: Atmospheres*, 106(D7), 7183-7192. https://doi.org/10.1029/2000JD900719
 - Pappas, K. et al. (2025). On the economic feasibility of tidal range power plants. *Proceedings of the Royal Society A*, 481(2305), 20230867. https://doi.org/10.1098/rspa.2023.0867
+
+- Taylor, K. E. (2001). Summarising model performance in a single diagram. *Journal of Geophysical Research: Atmospheres*, 106(D7), 7183-7192. https://doi.org/10.1029/2000JD900719
+
 - [Pearson correlation coefficient - Wikipedia](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
 - [Root mean square deviation - Wikipedia](https://en.wikipedia.org/wiki/Root_mean_square_deviation)
 - [Coefficient of determination - Wikipedia](https://en.wikipedia.org/wiki/Coefficient_of_determination)
