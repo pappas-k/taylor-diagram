@@ -12,37 +12,6 @@ This repository provides a ready-to-run script that generates such a diagram fro
 
 ---
 
-## Mathematical derivation
-
-The geometry of the Taylor diagram follows directly from the definition of the centred root-mean-square error (cRMSE) and the Pearson correlation coefficient.
-
-**Step 1 — expand the centred RMSE.**  
-For a model signal $f$ and reference signal $r$, both with their means removed, the squared centred RMSE is:
-
-$$E'^2 = \frac{1}{N}\sum_{i=1}^{N}\bigl[(f_i - \bar{f}) - (r_i - \bar{r})\bigr]^2$$
-
-Expanding the square:
-
-$$E'^2 = \sigma_f^2 + \sigma_r^2 - \frac{2}{N}\sum_{i=1}^{N}(f_i - \bar{f})(r_i - \bar{r})$$
-
-**Step 2 — introduce the Pearson correlation coefficient.**  
-By definition, $R = \frac{1}{N\,\sigma_f\,\sigma_r}\sum(f_i-\bar{f})(r_i-\bar{r})$, so:
-
-$$E'^2 = \sigma_f^2 + \sigma_r^2 - 2\,\sigma_f\,\sigma_r\,R$$
-
-**Step 3 — normalise by $\sigma_r$.**  
-Dividing through by $\sigma_r^2$ and defining $\sigma_N = \sigma_f/\sigma_r$:
-
-$$\text{NRMSE}^2 = \sigma_N^2 + 1 - 2\,\sigma_N\,R$$
-
-**Step 4 — recognise the law of cosines.**  
-Setting $\theta = \arccos(R)$, this is identical to the law of cosines for a triangle with sides $\sigma_N$, $1$, and NRMSE:
-
-$$\text{NRMSE}^2 = \sigma_N^2 + 1^2 - 2\,\sigma_N\cdot 1\cdot\cos\theta$$
-
-The consequence is geometric: in polar coordinates $(\theta, r) = (\arccos R,\; \sigma_N)$, the NRMSE is exactly the Euclidean distance from each model point to the **reference point** $(R=1,\; \sigma_N=1)$. Constant-NRMSE contours are therefore circles centred on the reference point.
-
----
 
 ## Practical application
 
