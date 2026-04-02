@@ -40,7 +40,7 @@ If you use this code, please cite:
 - **Normalised Standard Deviation ($\sigma_N$)** on the radial axis
 - **Pearson correlation coefficient ($R$)** on the angular axis
 - **Normalised centred RMSE (NRMSE)** as dashed contours centred on the reference point
-- **Summary statistics table** printed to the terminal before plotting: $\sigma_N$, $R$, $R^2$, NRMSE for every model
+- **Summary statistics table** printed to the terminal before plotting: $\sigma_N$, $R$, NRMSE for every model
 - **Synthetic test signals**: sinusoids with configurable amplitude, frequency, phase, and noise level
 - Up to **8 labelled model signals** out of the box, trivially extensible
 - Optional **figure export** to PNG (or any matplotlib-supported format)
