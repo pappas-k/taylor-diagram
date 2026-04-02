@@ -8,8 +8,17 @@ and printed as a summary table before plotting.
 
 Taylor diagram axes:
   - Radial   : Normalised Standard Deviation  NSD = σ_model / σ_obs
-  - Angular  : R² coefficient of determination
+  - Angular  : Pearson correlation coefficient  R
   - Contours : Normalised centred RMSE  NRMSE = cRMSE / σ_obs
+
+Derivation:
+  The centred RMSE between model f and observations r expands as:
+    E'² = σ_f² + σ_r² − 2·σ_f·σ_r·R
+  Dividing through by σ_r²:
+    NRMSE² = NSD² + 1 − 2·NSD·R
+  This is the law of cosines with angle θ = arccos(R), so plotting each model
+  at polar coordinates (arccos(R), NSD) makes NRMSE the Euclidean distance
+  from the reference point (θ=0, r=1).
 """
 
 import numpy as np
@@ -80,24 +89,24 @@ def setup_taylor_axes(fig, rect=111, smax=1.5):
     """
     tr = PolarAxes.PolarTransform()
 
-    # R² ticks on the arc
-    r2_ticks = np.concatenate((np.arange(11.0) / 10.0, [0.95, 0.99]))
-    t_ticks  = np.arccos(r2_ticks)
+    # Pearson R ticks on the arc (angular axis = arccos(R))
+    r_ticks = np.concatenate((np.arange(11.0) / 10.0, [0.95, 0.99]))
+    t_ticks = np.arccos(r_ticks)
     gh = fa.GridHelperCurveLinear(
         tr,
         extremes=(0, np.pi / 2, 0, smax),
         grid_locator1=gf.FixedLocator(t_ticks),
-        tick_formatter1=gf.DictFormatter(dict(zip(t_ticks, map(str, r2_ticks)))),
+        tick_formatter1=gf.DictFormatter(dict(zip(t_ticks, map(str, r_ticks)))),
     )
 
     ax = fa.FloatingSubplot(fig, rect, grid_helper=gh)
     fig.add_subplot(ax)
 
-    # Configure the three visible axes: top (R²), left and right (σ_N)
+    # Configure the three visible axes: top (R), left and right (σ_N)
     axis_config = {
-        'top':   dict(axis_dir='bottom', tick_dir='top',   label_dir='top',   text='$R^2$'),
-        'left':  dict(axis_dir='bottom', tick_dir='bottom', label_dir='bottom', text=r'$\sigma_N$'),
-        'right': dict(axis_dir='top',    tick_dir='left',   label_dir='top',   text=r'$\sigma_N$'),
+        'top':   dict(axis_dir='bottom', tick_dir='top',    label_dir='top',    text=r'Correlation Coefficient ($R$)',                  fontsize=16),
+        'left':  dict(axis_dir='bottom', tick_dir='bottom', label_dir='bottom', text=r'Normalised Standard Deviation ($\sigma_N$)',      fontsize=14),
+        'right': dict(axis_dir='top',    tick_dir='left',   label_dir='top',    text=r'$\sigma_N$',                                     fontsize=16),
     }
     for side, cfg in axis_config.items():
         ax.axis[side].set_axis_direction(cfg['axis_dir'])
@@ -105,7 +114,7 @@ def setup_taylor_axes(fig, rect=111, smax=1.5):
         ax.axis[side].major_ticklabels.set_axis_direction(cfg['tick_dir'])
         ax.axis[side].label.set_axis_direction(cfg['label_dir'])
         ax.axis[side].label.set_text(cfg['text'])
-        ax.axis[side].label.set_fontsize(22)
+        ax.axis[side].label.set_fontsize(cfg['fontsize'])
     ax.axis['bottom'].set_visible(False)
     ax.grid()
 
@@ -157,7 +166,7 @@ def plot_taylor(stats, model_defs, output_file=None):
 
     for (nsd, r, r2, nrmse), m in zip(stats, model_defs):
         aux_ax.plot(
-            np.arccos(r2), nsd,
+            np.arccos(r), nsd,
             marker='o', color=m['color'],
             markeredgecolor='black', markeredgewidth=0.5,
             ms=8, zorder=5, ls='',
