@@ -1,4 +1,4 @@
-# Taylor Diagram
+# Normalised Taylor Diagram
 
 A generic, self-contained Python implementation of the normalised Taylor diagram, a compact polar plot that summarises how well one or more model outputs reproduce a reference (observed) signal using three statistics simultaneously: the normalised standard deviation ($\sigma_N$), the Pearson correlation coefficient ($R$), and the normalised centred root-mean-square error (NRMSE).
 
