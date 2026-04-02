@@ -54,7 +54,7 @@ If you use this code, please cite:
 pip install numpy matplotlib
 
 # Run (opens interactive window and prints statistics)
-python3 taylor_diagram_generic.py
+python3 taylor_diagram_norm.py
 ```
 
 To save a figure, set `OUTPUT_FILE = 'taylor_diagram.png'` in the CONFIG block before running.

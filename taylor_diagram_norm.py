@@ -104,8 +104,8 @@ def setup_taylor_axes(fig, rect=111, smax=1.5):
     # Configure the three visible axes: top (R), left and right (σ_N)
     axis_config = {
         'top':   dict(axis_dir='bottom', tick_dir='top',    label_dir='top',    text=r'Correlation Coefficient ($R$)',                  fontsize=16),
-        'left':  dict(axis_dir='bottom', tick_dir='bottom', label_dir='bottom', text=r'Normalised Standard Deviation ($\sigma_N$)',      fontsize=14),
-        'right': dict(axis_dir='top',    tick_dir='left',   label_dir='top',    text=r'$\sigma_N$',                                     fontsize=16),
+        'left':  dict(axis_dir='bottom', tick_dir='bottom', label_dir='bottom', text=r'Normalised Standard Deviation ($\sigma_N$)',      fontsize=16),
+        'right': dict(axis_dir='top',    tick_dir='left',   label_dir='top',    text=r'Normalised Standard Deviation ($\sigma_N$)',                                     fontsize=16),
     }
     for side, cfg in axis_config.items():
         ax.axis[side].set_axis_direction(cfg['axis_dir'])
