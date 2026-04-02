@@ -77,9 +77,8 @@ def compute_statistics(obs, mod):
     std_obs = np.std(obs)
     nsd     = np.std(mod) / std_obs
     r       = float(np.corrcoef(obs, mod)[0, 1])
-    r2      = 1.0 - np.sum((obs - mod) ** 2) / np.sum((obs - np.mean(obs)) ** 2)
     nrmse   = np.sqrt(1.0 + nsd**2 - 2.0 * nsd * r)
-    return nsd, r, r2, nrmse
+    return nsd, r, nrmse
 
 
 def setup_taylor_axes(fig, rect=111, smax=1.5):
@@ -157,14 +156,14 @@ def plot_taylor(stats, model_defs, output_file=None):
 
     Parameters
     ----------
-    stats      : list of (nsd, r, r2, nrmse) — one tuple per model
+    stats      : list of (nsd, r, nrmse) — one tuple per model
     model_defs : list of model dicts with keys 'label' and 'color'
     """
     fig    = plt.figure(figsize=(8, 8))
     aux_ax = setup_taylor_axes(fig, rect=111, smax=1.5)
     add_nrmse_contours(aux_ax)
 
-    for (nsd, r, r2, nrmse), m in zip(stats, model_defs):
+    for (nsd, r, nrmse), m in zip(stats, model_defs):
         aux_ax.plot(
             np.arccos(r), nsd,
             marker='o', color=m['color'],
@@ -208,11 +207,11 @@ if __name__ == '__main__':
     stats = [compute_statistics(obs, mod) for mod in models]
 
     # Print summary table
-    header = f"{'Model':<12}  {'NSD':>8}  {'R':>8}  {'R2':>8}  {'NRMSE':>8}"
+    header = f"{'Model':<12}  {'NSD':>8}  {'R':>8}  {'NRMSE':>8}"
     sep    = '─' * len(header)
     print(f'\n{sep}\n{header}\n{sep}')
-    for m, (nsd, r, r2, nrmse) in zip(MODELS, stats):
-        print(f"{m['label']:<12}  {nsd:>8.4f}  {r:>8.4f}  {r2:>8.4f}  {nrmse:>8.4f}")
+    for m, (nsd, r, nrmse) in zip(MODELS, stats):
+        print(f"{m['label']:<12}  {nsd:>8.4f}  {r:>8.4f}  {nrmse:>8.4f}")
     print(sep + '\n')
 
     # Plot
