@@ -14,10 +14,10 @@ This repository provides a ready-to-run script that generates such a diagram fro
 
 ## Features
 
-- **Normalised Standard Deviation ($\sigma_N$)** on the radial axis
+- **Normalised Standard Deviation (NSD)** on the radial axis
 - **Pearson correlation coefficient ($R$)** on the angular axis
 - **Normalised centred RMSE (NRMSE)** as dashed contours centred on the reference point
-- **Summary statistics table** printed to the terminal before plotting: $\sigma_N$, $R$, NRMSE for every model
+- **Summary statistics table** printed to the terminal before plotting: NSD, $R$, NRMSE for every model
 - **Synthetic test signals**: sinusoids with configurable amplitude, frequency, phase, and noise level
 - Up to **8 labelled model signals** out of the box, trivially extensible
 - Optional **figure export** to PNG (or any matplotlib-supported format)
@@ -41,13 +41,13 @@ To save a figure, set `OUTPUT_FILE = 'taylor_diagram.png'` in the CONFIG block b
 ## Diagram layout
 
 ```
-Angular axis (top arc)  ->  R   (0 = uncorrelated, 1 = perfect correlation)
-Radial axis             ->  σ_N = σ_model / σ_obs
-Dashed contours         ->  NRMSE = sqrt(1 + σ_N² - 2·σ_N·R)
-Reference point (X)     ->  (R=1, σ_N=1) — perfect model
+Angular axis (top arc)  ->  R    (0 = uncorrelated, 1 = perfect correlation)
+Radial axis             ->  NSD  = σ_model / σ_obs
+Dashed contours         ->  NRMSE = sqrt(1 + NSD² - 2·NSD·R)
+Reference point (X)     ->  (R=1, NSD=1) — perfect model
 ```
 
-A model that agrees well with observations plots close to the reference point: $\sigma_N \approx 1$, $R \approx 1$, NRMSE $\approx 0$.
+A model that agrees well with observations plots close to the reference point: NSD $\approx 1$, $R \approx 1$, NRMSE $\approx 0$.
 
 ---
 
@@ -56,6 +56,7 @@ A model that agrees well with observations plots close to the reference point: $
 - Python 3.8+
 - numpy
 - matplotlib
+- LaTeX (optional, for rendered math labels; to disable, comment out `rc('text', usetex=True)` in the script)
 
 ---
 
@@ -72,4 +73,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - [Pearson correlation coefficient - Wikipedia](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
 - [Root mean square deviation - Wikipedia](https://en.wikipedia.org/wiki/Root_mean_square_deviation)
-- [Coefficient of determination - Wikipedia](https://en.wikipedia.org/wiki/Coefficient_of_determination)
